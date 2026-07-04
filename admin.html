@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Admin — Nuevo Destino Viajes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/pages/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ======================= SIDEBAR ======================= -->
+<aside class="adm-sidebar">
+  <div class="adm-sidebar__brand">
+    <img src="assets/img/logo-nuevo-destino.png" alt="Nuevo Destino" class="adm-sidebar__logo">
+    <span class="adm-sidebar__role">Panel Admin</span>
+  </div>
+
+  <nav class="adm-nav">
+    <a href="#paquetes-section"  class="adm-nav__item is-active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Paquetes
+    </a>
+    <a href="#" class="adm-nav__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      Consultas
+      <span class="adm-badge">3</span>
+    </a>
+    <a href="agencia.html" class="adm-nav__item adm-nav__item--back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver al sitio
+    </a>
+  </nav>
+
+  <div class="adm-sidebar__user">
+    <div class="adm-avatar">A</div>
+    <div>
+      <p class="adm-sidebar__username" id="adm-username-display">Administrador</p>
+      <button id="logoutBtn" class="adm-sidebar__logout">Cerrar sesión</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ======================= MAIN ======================= -->
+<main class="adm-main">
+
+  <div class="adm-topbar">
+    <h1 class="adm-topbar__title">Paquetes turísticos</h1>
+    <button class="adm-btn adm-btn--primary" id="newPackageBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      Nuevo paquete
+    </button>
+  </div>
+
+  <!-- Stats -->
+  <div class="adm-stats" id="paquetes-section">
+    <div class="adm-stat">
+      <span class="adm-stat__num" id="statTotal">6</span>
+      <span class="adm-stat__label">Paquetes activos</span>
+    </div>
+    <div class="adm-stat">
+      <span class="adm-stat__num">3</span>
+      <span class="adm-stat__label">Consultas pendientes</span>
+    </div>
+    <div class="adm-stat">
+      <span class="adm-stat__num">2</span>
+      <span class="adm-stat__label">Internacionales</span>
+    </div>
+    <div class="adm-stat">
+      <span class="adm-stat__num">2</span>
+      <span class="adm-stat__label">Nacionales</span>
+    </div>
+  </div>
+
+  <!-- Package table -->
+  <div class="adm-table-wrap">
+    <table class="adm-table" id="packagesTable">
+      <thead>
+        <tr>
+          <th>Destino</th>
+          <th>Categoría</th>
+          <th>Duración</th>
+          <th>Precio desde</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="packagesBody">
+        <!-- Filas generadas por JS -->
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<!-- ======================= MODAL NUEVO/EDITAR PAQUETE ======================= -->
+<div class="adm-modal" id="packageModal" hidden role="dialog" aria-modal="true">
+  <div class="adm-modal__backdrop" id="packageBackdrop"></div>
+  <div class="adm-modal__box">
+
+    <div class="adm-modal__header">
+      <h2 id="modalTitle">Nuevo paquete</h2>
+      <button class="adm-modal__close" id="modalClose" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <form class="adm-pkg-form" id="packageForm" novalidate>
+      <input type="hidden" id="pkgFirestoreId" name="firestoreId">
+
+      <div class="adm-pkg-form__row">
+        <div class="adm-pkg-form__field">
+          <label for="pkgNombre">Nombre del paquete *</label>
+          <input type="text" id="pkgNombre" name="nombre" placeholder="Ej: Bariloche Clásico" required>
+        </div>
+        <div class="adm-pkg-form__field">
+          <label for="pkgCategoria">Categoría *</label>
+          <select id="pkgCategoria" name="categoria" required>
+            <option value="" disabled selected>Seleccioná</option>
+            <option value="nacional">Nacional</option>
+            <option value="internacional">Internacional</option>
+            <option value="grupal">Grupal</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="adm-pkg-form__row">
+        <div class="adm-pkg-form__field">
+          <label for="pkgDuracion">Duración</label>
+          <input type="text" id="pkgDuracion" name="duracion" placeholder="Ej: 7 días">
+        </div>
+        <div class="adm-pkg-form__field">
+          <label for="pkgPrecio">Precio desde *</label>
+          <input type="text" id="pkgPrecio" name="precio" placeholder="Ej: $850.000 o USD 1.200" required>
+        </div>
+      </div>
+
+      <div class="adm-pkg-form__field">
+        <label for="pkgDesc">Descripción</label>
+        <textarea id="pkgDesc" name="descripcion" rows="3" placeholder="Breve descripción del paquete..."></textarea>
+      </div>
+
+      <div class="adm-pkg-form__row">
+        <div class="adm-pkg-form__field">
+          <label for="pkgIncluye">¿Qué incluye?</label>
+          <input type="text" id="pkgIncluye" name="incluye" placeholder="Ej: Vuelo incluido · Alojamiento">
+        </div>
+        <div class="adm-pkg-form__field">
+          <label for="pkgEstado">Estado</label>
+          <select id="pkgEstado" name="estado">
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="adm-pkg-form__actions">
+        <button type="button" class="adm-btn adm-btn--ghost" id="cancelPackage">Cancelar</button>
+        <button type="submit" class="adm-btn adm-btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span id="submitLabel">Guardar paquete</span>
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!-- Firebase SDK (compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

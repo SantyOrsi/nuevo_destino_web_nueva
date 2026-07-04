@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agencia — Nuevo Destino Viajes</title>
+<meta name="description" content="Paquetes nacionales e internacionales y viajes grupales. Armamos cada itinerario a medida, con más de 15 años de experiencia.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/pages/agencia.css">
+</head>
+<body>
+
+<!-- ======================= TOP BAR ======================= -->
+<div class="topbar">
+  <div class="container topbar__inner">
+
+    <!-- Admin link — izquierda, discreto -->
+    <a href="#" class="admin-link" id="adminTrigger" aria-label="Acceso administrador">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      <span>Admin</span>
+    </a>
+
+    <div class="topbar__item topbar__schedule">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+      <span>Lunes a viernes de 09 a 19 hs | Sábado de 09 a 12 hs · Línea de contacto (0341) 334-1317 / 507-9587</span>
+    </div>
+
+    <div class="topbar__right">
+      <div class="topbar__item topbar__address">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>Blvd. 27 de Febrero 2265, S2001 Rosario, Santa Fe</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <img src="assets/img/logo-nuevo-destino.png" alt="Nuevo Destino Viajes">
+    </a>
+
+    <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="navbar__menu">
+      <li class="has-dropdown">
+        <a href="index.html#empresa" class="navbar__link">
+          La empresa
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"></path></svg>
+        </a>
+        <ul class="dropdown">
+          <li><a href="index.html#empresa">Quiénes somos</a></li>
+          <li><a href="#">Nuestra flota</a></li>
+          <li><a href="#">Trabajá con nosotros</a></li>
+        </ul>
+      </li>
+      <li><a href="traslado.html" class="navbar__link">Traslado</a></li>
+      <li><a href="agencia.html" class="navbar__link navbar__link--active">Agencia</a></li>
+      <li><a href="index.html#contacto" class="navbar__link">Contacto</a></li>
+    </ul>
+
+    <div class="navbar__actions">
+      <div class="lang-switch navbar__lang">
+        <button type="button" data-lang-btn="es" class="is-active">ES</button>
+        <span>/</span>
+        <button type="button" data-lang-btn="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="ag-hero" id="inicio">
+
+  <div class="ag-hero__bg">
+    <img src="assets/img/agencia-hero.jpg" alt="Nuevo Destino Agencia de Viajes">
+  </div>
+  <div class="ag-hero__overlay"></div>
+
+  <div class="container ag-hero__content">
+    <div class="ag-hero__text">
+
+      <span class="ag-hero__badge" data-i18n="ag_badge">Agencia habilitada · Turismo nacional e internacional</span>
+
+      <h1 class="ag-hero__title">
+        <span class="ag-hero__line ag-hero__line--white" data-i18n="ag_line1">Viajá con</span>
+        <span class="ag-hero__line ag-hero__line--yellow" data-i18n="ag_line2"><em>quienes saben</em></span>
+        <span class="ag-hero__line ag-hero__line--white" data-i18n="ag_line3">hacerlo.</span>
+      </h1>
+
+      <p class="ag-hero__desc" data-i18n="ag_desc">
+        Paquetes nacionales e internacionales y viajes grupales.<br>Armamos cada itinerario a medida, con el respaldo de más de 15 años de experiencia.
+      </p>
+
+      <div class="ag-hero__actions">
+        <a href="#paquetes" class="ag-btn ag-btn--yellow" data-i18n="ag_btn_paquetes">Ver paquetes</a>
+        <a href="#consulta" class="ag-btn ag-btn--ghost">
+          <span data-i18n="ag_btn_consultar">Consultar un viaje</span>
+          <span class="ag-btn__circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="ag-hero__pills">
+        <a href="#paquetes" class="ag-pill" data-filter="internacional">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          <span data-i18n="ag_pill_intl">Internacional</span>
+        </a>
+        <a href="#paquetes" class="ag-pill" data-filter="nacional">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-i18n="ag_pill_nac">Nacional</span>
+        </a>
+        <a href="#paquetes" class="ag-pill" data-filter="grupal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          <span data-i18n="ag_pill_grp">Grupal</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PAQUETES ======================= -->
+<section class="ag-paquetes" id="paquetes">
+  <div class="container">
+
+    <div class="ag-paquetes__header">
+      <div>
+        <span class="eyebrow" data-i18n="ag_paq_eyebrow">Nuestros destinos</span>
+        <h2 class="ag-section-title"><span data-i18n="ag_paq_title">Paquetes</span> <span class="ag-accent" data-i18n="ag_paq_title2">disponibles</span></h2>
+      </div>
+      <div class="ag-filter-tabs" id="filterTabs">
+        <button class="ag-tab is-active" data-tab="todos" data-i18n="ag_tab_todos">Todos</button>
+        <button class="ag-tab" data-tab="nacional" data-i18n="ag_tab_nac">Nacional</button>
+        <button class="ag-tab" data-tab="internacional" data-i18n="ag_tab_intl">Internacional</button>
+        <button class="ag-tab" data-tab="grupal" data-i18n="ag_tab_grp">Grupal</button>
+      </div>
+    </div>
+
+    <div class="ag-cards" id="packageGrid">
+
+      <article class="ag-card" data-category="nacional">
+        <div class="ag-card__img ag-card__img--1">
+          <span class="ag-card__tag">Nacional</span>
+        </div>
+        <div class="ag-card__body">
+          <div class="ag-card__meta">
+            <span>🗓 7 días</span>
+            <span>✈ Vuelo incluido</span>
+          </div>
+          <h3>Bariloche Clásico</h3>
+          <p>Paisajes patagónicos, circuito chico y cerro Catedral. Alojamiento y desayuno incluidos.</p>
+          <div class="ag-card__footer">
+            <span class="ag-card__price">Desde <strong>$850.000</strong></span>
+            <a href="#consulta" class="ag-card__cta">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ag-card" data-category="internacional">
+        <div class="ag-card__img ag-card__img--2">
+          <span class="ag-card__tag">Internacional</span>
+        </div>
+        <div class="ag-card__body">
+          <div class="ag-card__meta">
+            <span>🗓 10 días</span>
+            <span>✈ Vuelo incluido</span>
+          </div>
+          <h3>Europa Esencial</h3>
+          <p>Madrid, París y Roma. Hoteles céntricos, guía en español y traslados incluidos.</p>
+          <div class="ag-card__footer">
+            <span class="ag-card__price">Desde <strong>USD 2.800</strong></span>
+            <a href="#consulta" class="ag-card__cta">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ag-card" data-category="grupal">
+        <div class="ag-card__img ag-card__img--3">
+          <span class="ag-card__tag">Grupal</span>
+        </div>
+        <div class="ag-card__body">
+          <div class="ag-card__meta">
+            <span>🗓 5 días</span>
+            <span>👥 Mín. 15 pax</span>
+          </div>
+          <h3>Cataratas & Misiones</h3>
+          <p>Las Cataratas del Iguazú con excursión al lado argentino y brasileño. Bus cama desde Rosario.</p>
+          <div class="ag-card__footer">
+            <span class="ag-card__price">Desde <strong>$620.000</strong></span>
+            <a href="#consulta" class="ag-card__cta">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ag-card" data-category="internacional">
+        <div class="ag-card__img ag-card__img--4">
+          <span class="ag-card__tag">Internacional</span>
+        </div>
+        <div class="ag-card__body">
+          <div class="ag-card__meta">
+            <span>🗓 8 días</span>
+            <span>✈ Vuelo incluido</span>
+          </div>
+          <h3>Brasil: Río & Buzios</h3>
+          <p>Rio de Janeiro + Búzios. Cristo Redentor, Pan de Azúcar, playa y vida nocturna.</p>
+          <div class="ag-card__footer">
+            <span class="ag-card__price">Desde <strong>USD 1.200</strong></span>
+            <a href="#consulta" class="ag-card__cta">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ag-card" data-category="nacional">
+        <div class="ag-card__img ag-card__img--5">
+          <span class="ag-card__tag">Nacional</span>
+        </div>
+        <div class="ag-card__body">
+          <div class="ag-card__meta">
+            <span>🗓 4 días</span>
+            <span>🚌 Bus incluido</span>
+          </div>
+          <h3>Mendoza & Bodegas</h3>
+          <p>Ruta del vino, Alta Montaña y Cañón del Atuel. Degustaciones y alojamiento boutique.</p>
+          <div class="ag-card__footer">
+            <span class="ag-card__price">Desde <strong>$490.000</strong></span>
+            <a href="#consulta" class="ag-card__cta">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ag-card" data-category="grupal">
+        <div class="ag-card__img ag-card__img--6">
+          <span class="ag-card__tag">Grupal</span>
+        </div>
+        <div class="ag-card__body">
+          <div class="ag-card__meta">
+            <span>🗓 12 días</span>
+            <span>👥 Mín. 20 pax</span>
+          </div>
+          <h3>Perú & Machu Picchu</h3>
+          <p>Lima, Cusco, Valle Sagrado y la ciudadela inca. Vuelos, hoteles y guías incluidos.</p>
+          <div class="ag-card__footer">
+            <span class="ag-card__price">Desde <strong>USD 1.900</strong></span>
+            <a href="#consulta" class="ag-card__cta">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONSULTA ======================= -->
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo">
+          <img src="assets/img/logo-nuevo-destino.png" alt="Nuevo Destino Viajes">
+        </a>
+        <p>Una empresa familiar de Rosario dedicada a traslados y turismo, con infraestructura propia y un equipo comprometido con cada viaje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4 data-i18n="footer_col1_title">Empresa</h4>
+          <ul>
+            <li><a href="index.html#empresa">Quiénes somos</a></li>
+            <li><a href="#">Nuestra flota</a></li>
+            <li><a href="#">Trabajá con nosotros</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_col2_title">Servicios</h4>
+          <ul>
+            <li><a href="traslado.html">Traslado</a></li>
+            <li><a href="agencia.html">Agencia</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_col3_title">Contacto</h4>
+          <ul>
+            <li>(0341) 334-1317 / 507-9587</li>
+            <li>Blvd. 27 de Febrero 2265, Rosario</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Nuevo Destino Viajes. Todos los derechos reservados.</span>
+      <span>Rosario, Santa Fe, Argentina</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= WHATSAPP FLOTANTE ======================= -->
+<a href="https://wa.me/5493413079587?text=Hola%2C%20quiero%20info%20sobre%20paquetes%20de%20viaje" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.04 4C9.4 4 4 9.4 4 16.04c0 2.32.65 4.49 1.78 6.34L4 28l5.78-1.74A11.97 11.97 0 0 0 16.04 28c6.64 0 12.04-5.4 12.04-12.04S22.68 4 16.04 4zm0 21.86c-2.04 0-3.95-.58-5.57-1.6l-.4-.24-3.42 1.03 1.05-3.33-.26-.42a9.77 9.77 0 0 1-1.6-5.36c0-5.42 4.4-9.82 9.82-9.82a9.78 9.78 0 0 1 9.82 9.82c-.01 5.42-4.41 9.92-9.44 9.92zm5.38-7.36c-.3-.15-1.74-.86-2-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-1.7-.85-2.82-1.52-3.94-3.45-.3-.51.3-.47.86-1.57.1-.2.05-.37-.05-.52-.1-.15-.66-1.6-.9-2.15-.24-.55-.48-.47-.66-.48-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.07 3.16 5.08 4.3 2.5.96 2.5.64 2.95.6.45-.05 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.25-.16-.55-.31z"/></svg>
+  <span class="whatsapp-float__tooltip">¡Contactate con nosotros!</span>
+</a>
+
+<!-- ======================= MODAL LOGIN ADMIN ======================= -->
+<div class="admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-label="Acceso administrador" hidden>
+  <div class="admin-modal__backdrop" id="adminBackdrop"></div>
+  <div class="admin-modal__box">
+    <button class="admin-modal__close" id="adminClose" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="admin-modal__brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+    </div>
+
+    <h2 class="admin-modal__title">Panel Admin</h2>
+    <p class="admin-modal__sub">Acceso exclusivo para administradores</p>
+
+    <form class="admin-form" id="adminForm" novalidate>
+      <div class="admin-form__field">
+        <label for="adminUser">Usuario</label>
+        <input type="text" id="adminUser" name="usuario" placeholder="tu@email.com" autocomplete="username" required>
+      </div>
+      <div class="admin-form__field">
+        <label for="adminPass">Contraseña</label>
+        <div class="admin-form__pass-wrap">
+          <input type="password" id="adminPass" name="password" placeholder="••••••••" autocomplete="current-password" required>
+          <button type="button" class="admin-form__toggle-pass" aria-label="Mostrar contraseña">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="admin-form__error" id="adminError" hidden>Usuario o contraseña incorrectos.</p>
+      <button type="submit" class="admin-form__submit">
+        <span>Ingresar</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Firebase SDK (compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/agencia.js"></script>
+</body>
+</html>
