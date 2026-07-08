@@ -1,0 +1,557 @@
+/* =========================================================
+   NUEVO DESTINO VIAJES — css/pages/flota.css
+   Estilos exclusivos de flota.html
+   ========================================================= */
+
+.flota-accent { color: var(--yellow-dark); }
+
+/* -------------------- Hero -------------------- */
+.flota-hero {
+  position: relative;
+  color: var(--white);
+  isolation: isolate;
+}
+
+.flota-hero__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.flota-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.flota-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(10,10,10,.70) 0%,
+    rgba(10,10,10,.40) 50%,
+    rgba(10,10,10,.60) 100%);
+}
+
+.flota-hero__content {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.flota-hero__text { max-width: 560px; }
+
+.flota-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 18px;
+}
+
+.flota-hero__badge::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--yellow);
+}
+
+.flota-hero__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.flota-hero__title span { display: block; }
+
+.flota-hero__desc {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255,255,255,.72);
+  max-width: 460px;
+}
+
+/* -------------------- Banner importante -------------------- */
+.flota-banner {
+  padding: 36px 0;
+  background: var(--white);
+}
+
+.flota-banner__card {
+  background: #FFFBE6;
+  border: 2px solid var(--yellow);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.flota-banner__icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.flota-banner__content h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+.flota-banner__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 32px;
+}
+
+.flota-banner__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1.45;
+}
+
+.flota-banner__item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #1a8a4a;
+  margin-top: 2px;
+}
+
+/* -------------------- Grilla de vehículos -------------------- */
+.flota-grid-section {
+  padding: 60px 0 90px;
+  background: var(--gray-50);
+}
+
+.flota-categoria {
+  margin-bottom: 24px;
+  padding-top: 52px;
+}
+
+.flota-categoria:first-of-type { padding-top: 0; }
+
+.flota-cat-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 34px);
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  margin-top: 6px;
+}
+
+.flota-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+/* ---- Cards ---- */
+.flota-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  cursor: pointer;
+  transition: box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+
+.flota-card:hover {
+  box-shadow: 0 16px 36px rgba(0,0,0,.1);
+  transform: translateY(-4px);
+}
+
+.flota-card:hover .flota-card__overlay-hint { opacity: 1; }
+
+.flota-card__img {
+  height: 190px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Gradientes de color por vehículo (usados cuando no hay foto) */
+.flota-card__img--corolla    { background: url('../../assets/img/flota/corolla/01.jpg') center/cover no-repeat; }
+.flota-card__img--mercedes-c { background: url('../../assets/img/flota/mercedes/01.jpg') center/cover no-repeat; }
+.flota-card__img--hiace { background: url('../../assets/img/flota/hiace/01.jpg') center/cover no-repeat; }
+.flota-card__img--transit { background: url('../../assets/img/flota/transit/01.jpg') center/cover no-repeat; }
+.flota-card__img--sprinter   {background: url('../../assets/img/flota/sprinter/01.jpg') center/cover no-repeat; }
+.flota-card__img--saldivia   {background: url('../../assets/img/flota/saldivia/01.jpg') center/cover no-repeat ; }
+.flota-card__img--metalsur   { background: url('../../assets/img/flota/metalsur/01.jpg') center/cover no-repeat ; }
+.flota-card__img--comil      { background: url('../../assets/img/flota/comil/01.jpg') center/cover no-repeat ; }
+.flota-card__img--marcopolo  { background: linear-gradient(135deg, #1a1a2c 0%, #2c2c6a 100%); }
+
+/* Sin emoji decorativo */
+.flota-card__img::before { display: none; }
+
+.flota-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: var(--yellow);
+  color: var(--ink);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.flota-card__badge--vip {
+  background: var(--ink);
+  color: var(--yellow);
+}
+
+.flota-card__overlay-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity .25s var(--ease);
+}
+
+.flota-card__body {
+  padding: 18px 18px 16px;
+}
+
+.flota-card__tipo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+
+.flota-card__body h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.flota-card__specs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flota-card__specs span {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+/* -------------------- Modal detalle -------------------- */
+.flota-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.flota-modal[hidden] { display: none; }
+
+.flota-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(4px);
+}
+
+.flota-modal__box {
+  position: relative;
+  z-index: 1;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,.3);
+  animation: fadeUp .3s var(--ease) both;
+}
+
+.flota-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  transition: background .2s var(--ease);
+}
+
+.flota-modal__close:hover { background: var(--white); }
+.flota-modal__close svg  { width: 17px; height: 17px; }
+
+.flota-modal__img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.flota-modal__body { padding: 24px 26px 28px; }
+
+.flota-modal__tipo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--yellow-dark);
+  margin-bottom: 4px;
+}
+
+.flota-modal__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+.flota-modal__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.flota-modal__specs span {
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--black);
+}
+
+.flota-modal__desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--gray-700);
+  margin-bottom: 20px;
+}
+
+.flota-modal__features h4,
+.flota-modal__siempre h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.flota-modal__features ul,
+.flota-modal__siempre ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.flota-modal__features li,
+.flota-modal__siempre li {
+  font-size: 13.5px;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.flota-modal__siempre {
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-bottom: 22px;
+}
+
+.flota-modal__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: #25D366;
+  color: var(--white);
+  padding: 15px 24px;
+  border-radius: 999px;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+
+.flota-modal__cta:hover { background: #1ebc59; transform: translateY(-1px); }
+.flota-modal__cta svg  { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 900px) {
+  .flota-grid { grid-template-columns: repeat(2, 1fr); }
+  .flota-banner__items { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .flota-grid { grid-template-columns: 1fr; }
+  .flota-hero__content { padding-top: 44px; padding-bottom: 56px; }
+  .flota-banner__card { flex-direction: column; gap: 14px; padding: 20px; }
+  .flota-modal__box { max-height: 95vh; }
+  .flota-modal__img { height: 160px; }
+}
+
+/* ==================== CARRUSEL DEL MODAL ==================== */
+
+.flota-carousel {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--ink);
+}
+
+/* Cuando no hay fotos usa el gradiente de la card */
+.flota-carousel--gradient.flota-card__img--corolla    { background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9a 100%); }
+.flota-carousel--gradient.flota-card__img--mercedes-c { background: url('../../assets/img/flota/mercedes/01.jpg') center/cover no-repeat; }
+.flota-carousel--gradient.flota-card__img--hiace { background: url('../../assets/img/flota/hiace/01.jpg') center/cover no-repeat; }
+.flota-carousel--gradient.flota-card__img--transit { background: url('../../assets/img/flota/transit/01.jpg') center/cover no-repeat; }
+.flota-carousel--gradient.flota-card__img--sprinter   { background: linear-gradient(135deg, #2c1a4a 0%, #6a3aaa 100%); }
+.flota-carousel--gradient.flota-card__img--saldivia   { background: linear-gradient(135deg, #1a3a4a 0%, #2d7a9a 100%); }
+.flota-carousel--gradient.flota-card__img--metalsur   { background: linear-gradient(135deg, #4a1a1a 0%, #aa3a3a 100%); }
+.flota-carousel--gradient.flota-card__img--comil      { background: linear-gradient(135deg, #1a2a4a 0%, #2d4a9a 100%); }
+.flota-carousel--gradient.flota-card__img--marcopolo  { background: linear-gradient(135deg, #1a1a2c 0%, #2c2c6a 100%); }
+
+/* Track: todos los slides en fila horizontal */
+.flota-carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform .4s var(--ease);
+  will-change: transform;
+}
+
+.flota-carousel__slide {
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.flota-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.flota-carousel__slide--gradient { background: inherit; }
+
+/* Botones prev / next */
+.flota-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(4px);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+  z-index: 5;
+}
+
+.flota-carousel__btn:hover {
+  background: rgba(0,0,0,.75);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.flota-carousel__btn svg { width: 20px; height: 20px; }
+
+.flota-carousel__btn--prev { left: 12px; }
+.flota-carousel__btn--next { right: 12px; }
+
+/* Puntos indicadores */
+.flota-carousel__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 5;
+}
+
+.flota-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.45);
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+
+.flota-carousel__dot.is-active {
+  background: var(--yellow);
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .flota-carousel { height: 200px; }
+  .flota-carousel__btn { width: 34px; height: 34px; }
+  .flota-carousel__btn svg { width: 17px; height: 17px; }
+}
