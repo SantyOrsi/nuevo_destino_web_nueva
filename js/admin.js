@@ -8,7 +8,7 @@
    Poné esto en true para trabajar con datos en memoria
    (no toca Firestore ni Storage para nada). Cuando quieras
    volver a la base real, poné MOCK_MODE = false. --------- */
-const MOCK_MODE = false ;
+const MOCK_MODE = true;
 
 let _mockPaquetes = [];   // acá viven los paquetes mientras estás en modo mock
 let _mockIdCounter = 1;
@@ -159,28 +159,22 @@ async function guardarPaquete(e) {
     // ID temporal para la ruta en Storage
     const idStorage = firestoreId || `temp_${Date.now()}`;
 
-    // Subir archivos solo si se seleccionaron
+    // Subir archivos en paralelo (más rápido que uno atrás del otro)
+    submitLabel.textContent = "Subiendo archivos...";
+
+    const [imagenUrlSubida, pdfUrl, flyerUrl] = await Promise.all([
+      archivoImagen ? subirArchivo(archivoImagen, `paquetes/${idStorage}/imagen`) : Promise.resolve(null),
+      archivoPdf    ? subirArchivo(archivoPdf,    `paquetes/${idStorage}/itinerario`) : Promise.resolve(null),
+      archivoFlyer  ? subirArchivo(archivoFlyer,  `paquetes/${idStorage}/flyer`) : Promise.resolve(null),
+    ]);
+
+    // La imagen tiene dos posibles fuentes: el archivo subido o la URL pegada a mano.
+    // Si se subió un archivo, ese manda; si no, se usa la URL manual (si había).
     let imagenUrl = null;
-    let pdfUrl    = null;
-    let flyerUrl  = null;
-
     if (archivoImagen) {
-      // Si se subió un archivo, tiene prioridad sobre la URL pegada
-      submitLabel.textContent = "Subiendo imagen...";
-      imagenUrl = await subirArchivo(archivoImagen, `paquetes/${idStorage}/imagen`);
+      imagenUrl = imagenUrlSubida;
     } else if (urlImagenManual) {
-      // Si no hay archivo pero se pegó una URL, se usa directamente
       imagenUrl = urlImagenManual;
-    }
-
-    if (archivoPdf) {
-      submitLabel.textContent = "Subiendo PDF...";
-      pdfUrl = await subirArchivo(archivoPdf, `paquetes/${idStorage}/itinerario`);
-    }
-
-    if (archivoFlyer) {
-      submitLabel.textContent = "Subiendo flyer...";
-      flyerUrl = await subirArchivo(archivoFlyer, `paquetes/${idStorage}/flyer`);
     }
 
     // Armar objeto con los datos (solo incluir URLs si se subieron archivos nuevos)
