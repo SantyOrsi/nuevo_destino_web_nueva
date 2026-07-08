@@ -1,3 +1,4 @@
+
 /* =========================================================
    NUEVO DESTINO VIAJES — js/admin.js
    CRUD de paquetes con Firestore + subida de archivos a Storage.
@@ -8,7 +9,7 @@
    Poné esto en true para trabajar con datos en memoria
    (no toca Firestore ni Storage para nada). Cuando quieras
    volver a la base real, poné MOCK_MODE = false. --------- */
-const MOCK_MODE = false;
+const MOCK_MODE = true;
 
 let _mockPaquetes = [];   // acá viven los paquetes mientras estás en modo mock
 let _mockIdCounter = 1;
@@ -91,8 +92,6 @@ function renderizarTabla(lista) {
         <div style="display:flex;gap:6px;flex-wrap:wrap;">
           <span class="adm-status adm-status--${pkg.estado}">${pkg.estado === "activo" ? "Activo" : "Inactivo"}</span>
           ${pkg.imagenUrl ? `<span class="adm-file-badge">📷</span>` : ""}
-          ${pkg.pdfUrl    ? `<span class="adm-file-badge">📄</span>` : ""}
-          ${pkg.flyerUrl  ? `<span class="adm-file-badge">🗺️</span>` : ""}
         </div>
       </td>
       <td>
@@ -150,34 +149,24 @@ async function guardarPaquete(e) {
   submitLabel.textContent = "Guardando...";
 
   try {
-    // Obtener archivos seleccionados
-    const archivoImagen  = document.getElementById("pkgImagen").files[0];
-    const archivoPdf     = document.getElementById("pkgPdf").files[0];
-    const archivoFlyer   = document.getElementById("pkgFlyer").files[0];
+    // Obtener archivo e/o URL de imagen
+    const archivoImagen   = document.getElementById("pkgImagen").files[0];
     const urlImagenManual = document.getElementById("pkgImagenUrl").value.trim();
 
     // ID temporal para la ruta en Storage
     const idStorage = firestoreId || `temp_${Date.now()}`;
 
-    // Subir archivos en paralelo (más rápido que uno atrás del otro)
-    submitLabel.textContent = "Subiendo archivos...";
-
-    const [imagenUrlSubida, pdfUrl, flyerUrl] = await Promise.all([
-      archivoImagen ? subirArchivo(archivoImagen, `paquetes/${idStorage}/imagen`) : Promise.resolve(null),
-      archivoPdf    ? subirArchivo(archivoPdf,    `paquetes/${idStorage}/itinerario`) : Promise.resolve(null),
-      archivoFlyer  ? subirArchivo(archivoFlyer,  `paquetes/${idStorage}/flyer`) : Promise.resolve(null),
-    ]);
-
-    // La imagen tiene dos posibles fuentes: el archivo subido o la URL pegada a mano.
-    // Si se subió un archivo, ese manda; si no, se usa la URL manual (si había).
+    // Subir la imagen si se seleccionó un archivo
     let imagenUrl = null;
     if (archivoImagen) {
-      imagenUrl = imagenUrlSubida;
+      submitLabel.textContent = "Subiendo imagen...";
+      imagenUrl = await subirArchivo(archivoImagen, `paquetes/${idStorage}/imagen`);
     } else if (urlImagenManual) {
+      // Si no hay archivo pero se pegó una URL, se usa directamente
       imagenUrl = urlImagenManual;
     }
 
-    // Armar objeto con los datos (solo incluir URLs si se subieron archivos nuevos)
+    // Armar objeto con los datos (solo incluir imagenUrl si hay una nueva)
     const datos = {
       nombre,
       categoria,
@@ -190,8 +179,6 @@ async function guardarPaquete(e) {
     };
 
     if (imagenUrl) datos.imagenUrl = imagenUrl;
-    if (pdfUrl)    datos.pdfUrl    = pdfUrl;
-    if (flyerUrl)  datos.flyerUrl  = flyerUrl;
 
     if (MOCK_MODE) {
       if (firestoreId) {
@@ -255,10 +242,8 @@ window.editarPaquete = async function(firestoreId) {
     document.getElementById("pkgEstado").value      = pkg.estado       || "activo";
     document.getElementById("pkgImagenUrl").value   = pkg.imagenUrl    || "";
 
-    // Mostrar previews de archivos existentes
+    // Mostrar preview de la imagen existente
     mostrarPreviewUrl("previewImagen", pkg.imagenUrl, "imagen");
-    mostrarPreviewUrl("previewPdf",    pkg.pdfUrl,    "pdf");
-    mostrarPreviewUrl("previewFlyer",  pkg.flyerUrl,  "flyer");
 
     abrirModal("Editar paquete", "Actualizar");
   } catch (err) {
@@ -289,8 +274,6 @@ window.eliminarPaquete = async function(firestoreId, nombre) {
 /* ---- Preview de archivos seleccionados ------------------ */
 function initPreviews() {
   configurarPreview("pkgImagen", "previewImagen", "imagen");
-  configurarPreview("pkgPdf",    "previewPdf",    "pdf");
-  configurarPreview("pkgFlyer",  "previewFlyer",  "flyer");
   configurarPreviewUrlManual();
 }
 
@@ -330,12 +313,8 @@ function configurarPreview(inputId, previewId, tipo) {
     const preview = document.getElementById(previewId);
     if (!preview) return;
 
-    if (tipo === "imagen" || (tipo === "flyer" && archivo.type.startsWith("image/"))) {
-      const url = URL.createObjectURL(archivo);
-      preview.innerHTML = `<img src="${url}" alt="preview" style="max-height:80px;border-radius:6px;margin-top:6px;">`;
-    } else if (tipo === "pdf" || archivo.type === "application/pdf") {
-      preview.innerHTML = `<span class="adm-file-ok">📄 ${archivo.name}</span>`;
-    }
+    const url = URL.createObjectURL(archivo);
+    preview.innerHTML = `<img src="${url}" alt="preview" style="max-height:80px;border-radius:6px;margin-top:6px;">`;
   });
 }
 
@@ -343,12 +322,8 @@ function mostrarPreviewUrl(previewId, url, tipo) {
   const preview = document.getElementById(previewId);
   if (!preview || !url) return;
 
-  if (tipo === "imagen" || tipo === "flyer") {
-    preview.innerHTML = `<img src="${url}" alt="preview" style="max-height:80px;border-radius:6px;margin-top:6px;">
-      <a href="${url}" target="_blank" style="font-size:12px;display:block;margin-top:4px;color:var(--gray-500)">Ver archivo actual</a>`;
-  } else if (tipo === "pdf") {
-    preview.innerHTML = `<a href="${url}" target="_blank" class="adm-file-ok">📄 Ver PDF actual</a>`;
-  }
+  preview.innerHTML = `<img src="${url}" alt="preview" style="max-height:80px;border-radius:6px;margin-top:6px;">
+    <a href="${url}" target="_blank" style="font-size:12px;display:block;margin-top:4px;color:var(--gray-500)">Ver archivo actual</a>`;
 }
 
 /* ---- Modal ---------------------------------------------- */
@@ -386,17 +361,14 @@ function cerrarModal() {
 }
 
 function limpiarPreviews() {
-  ["previewImagen", "previewPdf", "previewFlyer"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.innerHTML = "";
-  });
-  ["wrapImagen", "wrapFlyer", "wrapPdf"].forEach(id => {
-    const wrap = document.getElementById(id);
-    if (wrap) {
-      const label = wrap.querySelector(".adm-file-label");
-      if (label) label.textContent = "Seleccionar archivo";
-    }
-  });
+  const el = document.getElementById("previewImagen");
+  if (el) el.innerHTML = "";
+
+  const wrap = document.getElementById("wrapImagen");
+  if (wrap) {
+    const label = wrap.querySelector(".adm-file-label");
+    if (label) label.textContent = "Seleccionar imagen (JPG, PNG)";
+  }
 }
 
 function initFormulario() {
