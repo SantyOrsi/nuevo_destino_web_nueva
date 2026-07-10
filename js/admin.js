@@ -7,8 +7,7 @@
 
 /* ---- MODO MOCK: probar sin Firebase conectado -----------
    Poné esto en true para trabajar con datos en memoria
-   (no toca Firestore ni Storage para nada). Cuando quieras
-   volver a la base real, poné MOCK_MODE = false. --------- */
+   (no toca Firestore ni Storage para nada). --------- */
 const MOCK_MODE = false;
 
 let _mockPaquetes = [];   // acá viven los paquetes mientras estás en modo mock
