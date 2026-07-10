@@ -329,6 +329,23 @@
   border-radius: 999px;
 }
 
+.ag-card__persons {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(3px);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
 .ag-card__body {
   padding: 22px 20px 20px;
   display: flex;
