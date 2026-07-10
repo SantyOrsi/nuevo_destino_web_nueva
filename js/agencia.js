@@ -153,13 +153,18 @@ document.addEventListener("DOMContentLoaded", () => {
       var wspUrl  = "https://wa.me/5493413079587?text=" + encodeURIComponent(mensaje);
 
       var meta = "";
-      if (pkg.duracion) meta += "<span>🗓 " + pkg.duracion + "</span>";
-      if (pkg.incluye)  meta += "<span>" + pkg.incluye.split("·")[0].trim() + "</span>";
+      if (pkg.duracion) meta += "<span>🗓 " + escHtml(pkg.duracion) + "</span>";
+      if (pkg.incluye)  meta += "<span>" + escHtml(pkg.incluye.split("·")[0].trim()) + "</span>";
+
+      var badgePersonas = pkg.personas
+        ? '<span class="ag-card__persons">👥 ' + escHtml(pkg.personas) + '</span>'
+        : "";
 
       html +=
         '<article class="ag-card" data-category="' + pkg.categoria + '">' +
           '<div class="ag-card__img" style="' + imgStyle + '">' +
             '<span class="ag-card__tag">' + capFirst(pkg.categoria) + '</span>' +
+            badgePersonas +
           '</div>' +
           '<div class="ag-card__body">' +
             (meta ? '<div class="ag-card__meta">' + meta + '</div>' : '') +
