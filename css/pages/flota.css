@@ -204,7 +204,7 @@
 .flota-card__img--saldivia   {background: url('../../assets/img/flota/saldivia/01.jpg') center/cover no-repeat ; }
 .flota-card__img--metalsur   { background: url('../../assets/img/flota/metalsur/01.jpg') center/cover no-repeat ; }
 .flota-card__img--comil      { background: url('../../assets/img/flota/comil/01.jpg') center/cover no-repeat ; }
-.flota-card__img--marcopolo  { background: linear-gradient(135deg, #1a1a2c 0%, #2c2c6a 100%); }
+.flota-card__img--marcopolo  { background: url('../../assets/img/flota/marcopolo/01.jpg') center/cover no-repeat ; } }
 
 /* Sin emoji decorativo */
 .flota-card__img::before { display: none; }
