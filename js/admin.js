@@ -1,4 +1,3 @@
-
 /* =========================================================
    NUEVO DESTINO VIAJES — js/admin.js
    CRUD de paquetes con Firestore + subida de archivos a Storage.
@@ -7,8 +6,9 @@
 
 /* ---- MODO MOCK: probar sin Firebase conectado -----------
    Poné esto en true para trabajar con datos en memoria
-   (no toca Firestore ni Storage para nada). --------- */
-const MOCK_MODE = false;
+   (no toca Firestore ni Storage para nada). Cuando quieras
+   volver a la base real, poné MOCK_MODE = false. --------- */
+const MOCK_MODE = true;
 
 let _mockPaquetes = [];   // acá viven los paquetes mientras estás en modo mock
 let _mockIdCounter = 1;
@@ -171,6 +171,7 @@ async function guardarPaquete(e) {
       categoria,
       duracion:    document.getElementById("pkgDuracion").value.trim(),
       precio,
+      personas:    document.getElementById("pkgPersonas").value.trim(),
       descripcion: document.getElementById("pkgDesc").value.trim(),
       incluye:     document.getElementById("pkgIncluye").value.trim(),
       estado:      document.getElementById("pkgEstado").value,
@@ -236,6 +237,7 @@ window.editarPaquete = async function(firestoreId) {
     document.getElementById("pkgCategoria").value   = pkg.categoria    || "";
     document.getElementById("pkgDuracion").value    = pkg.duracion     || "";
     document.getElementById("pkgPrecio").value      = pkg.precio       || "";
+    document.getElementById("pkgPersonas").value    = pkg.personas     || "";
     document.getElementById("pkgDesc").value        = pkg.descripcion  || "";
     document.getElementById("pkgIncluye").value     = pkg.incluye      || "";
     document.getElementById("pkgEstado").value      = pkg.estado       || "activo";
