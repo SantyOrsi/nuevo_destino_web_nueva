@@ -35,7 +35,9 @@ var VEHICULOS = {
     fotos: [
       "assets/img/flota/mercedes/01.jpg",
       "assets/img/flota/mercedes/02.jpg",
-      "assets/img/flota/mercedes/03.jpg"
+      "assets/img/flota/mercedes/03.jpg",
+      "assets/img/flota/mercedes/04.jpg",
+      "assets/img/flota/mercedes/05.jpg",
     ],
     specs:   ["👥 Hasta 3 pasajeros", "⭐ Alta gama", "🏆 VIP Premium"],
     desc:    "El estándar definitivo de elegancia y prestigio. Sedán de lujo ideal para pasajeros VIP, directivos o eventos especiales. Ofrece una experiencia de viaje superior con el inconfundible confort de Mercedes-Benz.",
