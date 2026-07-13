@@ -7,14 +7,14 @@
 
 const i18n = {
   es: {
-    topbar_schedule: "Lunes a viernes de 09 a 19 hs | Sábado de 09 a 12 hs · Línea de contacto (0341) 334-1317 / 507-9587",
+    topbar_schedule: "Lunes a viernes de 09 a 17 hs | Sábado de 09 a 13 hs · Línea de contacto (0341) 334-1317 / 307-9587",
     topbar_address: "Blvd. 27 de Febrero 2265, S2001 Rosario, Santa Fe",
 
     nav_empresa: "La empresa",
     nav_empresa_quienes: "Quiénes somos",
     nav_empresa_flota: "Nuestra flota",
     nav_empresa_trabaja: "Trabajá con nosotros",
-    nav_traslado: "Traslado",
+    nav_traslado: "Traslados",
     nav_agencia: "Agencia",
     nav_contacto: "Contacto",
     nav_cta: "Datos",
