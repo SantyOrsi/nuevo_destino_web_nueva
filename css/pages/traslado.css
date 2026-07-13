@@ -391,3 +391,192 @@
   .tras-hero__title { font-size: 36px; }
   .tras-premium__card { padding: 28px 20px; }
 }
+
+/* ==================== FORMULARIO DE CONTACTO ==================== */
+.tras-contacto {
+  background: var(--ink);
+  padding: 90px 0;
+}
+
+.tras-contacto__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Texto lateral izquierdo */
+.tras-contacto__text .eyebrow { color: var(--yellow); }
+.tras-contacto__text .eyebrow::before { background: var(--yellow); }
+
+.tras-contacto__text .tras-section-title { color: var(--white); }
+
+.tras-contacto__text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.55);
+  margin-top: 14px;
+  margin-bottom: 32px;
+}
+
+.tras-contacto__datos { display: flex; flex-direction: column; gap: 14px; }
+
+.tras-contacto__dato {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+}
+
+.tras-contacto__dato svg {
+  width: 18px;
+  height: 18px;
+  color: var(--yellow);
+  flex-shrink: 0;
+}
+
+/* Formulario */
+.tras-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tras-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tras-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tras-form__field label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.7);
+}
+
+.tras-form__opt {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: rgba(255,255,255,.35);
+  font-size: 11px;
+}
+
+.tras-form__field input,
+.tras-form__field textarea,
+.tras-form__field select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--white);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.tras-form__field input::placeholder,
+.tras-form__field textarea::placeholder { color: rgba(255,255,255,.25); }
+
+.tras-form__field input:focus,
+.tras-form__field textarea:focus,
+.tras-form__field select:focus {
+  outline: none;
+  border-color: var(--yellow);
+  background: rgba(245,196,0,.05);
+}
+
+/* Select personalizado */
+.tras-form__select-wrap {
+  position: relative;
+}
+
+.tras-form__select-wrap select {
+  width: 100%;
+  cursor: pointer;
+  padding-right: 40px;
+  color: rgba(255,255,255,.7);
+}
+
+.tras-form__select-wrap select option {
+  background: #1a1a1a;
+  color: var(--white);
+}
+
+.tras-form__chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: rgba(255,255,255,.4);
+  pointer-events: none;
+}
+
+/* Botón enviar */
+.tras-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: var(--yellow);
+  color: var(--ink);
+  border: none;
+  border-radius: 999px;
+  padding: 15px 32px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+  margin-top: 4px;
+}
+
+.tras-form__submit:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+.tras-form__submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+.tras-form__submit svg { width: 16px; height: 16px; }
+
+/* Mensaje de éxito */
+.tras-form__success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #25D366;
+  background: rgba(37,211,102,.08);
+  border: 1px solid rgba(37,211,102,.25);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-top: 8px;
+}
+
+.tras-form__success svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .tras-contacto__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+  .tras-form__row { grid-template-columns: 1fr; }
+  .tras-contacto { padding: 60px 0; }
+}
