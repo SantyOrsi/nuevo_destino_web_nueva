@@ -20,7 +20,7 @@
   <div class="container topbar__inner">
     <div class="topbar__item topbar__schedule">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
-      <span data-i18n="topbar_schedule">Lunes a viernes de 09 a 17 hs | Sábado de 09 a 13 hs · Línea de contacto (0341) 334-1317 / 507-9587</span>
+      <span data-i18n="topbar_schedule">Lunes a viernes de 09 a 19 hs | Sábado de 09 a 12 hs · Línea de contacto (0341) 334-1317 / 507-9587</span>
     </div>
     <div class="topbar__right">
       <div class="topbar__item topbar__address">
@@ -53,7 +53,7 @@
           <li><a href="flota.html" data-i18n="nav_empresa_flota">Nuestra flota</a></li>
         </ul>
       </li>
-      <li><a href="traslado.html" class="navbar__link navbar__link--active" data-i18n="nav_traslado">Traslados</a></li>
+      <li><a href="traslado.html" class="navbar__link navbar__link--active" data-i18n="nav_traslado">Traslado</a></li>
       <li><a href="index.html#agencia" class="navbar__link" data-i18n="nav_agencia">Agencia</a></li>
       <li><a href="index.html#contacto" class="navbar__link" data-i18n="nav_contacto">Contacto</a></li>
     </ul>
@@ -156,7 +156,7 @@
         <span class="tras-premium__eyebrow">Servicio exclusivo</span>
         <h2 class="tras-premium__title">Nuevo Destino <em>Premium.</em></h2>
         <p class="tras-premium__desc">Experiencia de traslado de nivel internacional para ejecutivos, celebridades y eventos de alto perfil. Discreción, confort y puntualidad sin compromisos.</p>
-        <a href="https://wa.me/5493413079587?text=Hola%2C%20quiero%20consultar%20sobre%20el%20servicio%20premium%20de%20traslado" target="_blank" rel="noopener" class="tras-premium__btn">Consultar Premium →</a>
+        <a href="#" class="tras-premium__btn">Consultar Premium →</a>
       </div>
 
       <div class="tras-premium__right">
@@ -255,6 +255,96 @@
   </div>
 </section>
 
+<!-- ======================= FORMULARIO DE CONTACTO ======================= -->
+<section class="tras-contacto" id="contacto-form">
+  <div class="container tras-contacto__inner">
+
+    <div class="tras-contacto__text">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="tras-section-title">¿Necesitás un <span class="accent-yellow">traslado?</span></h2>
+      <p>Completá el formulario y nos comunicamos con vos a la brevedad para darte una solución a medida.</p>
+
+      <div class="tras-contacto__datos">
+        <div class="tras-contacto__dato">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.08-.54a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>(0341) 334-1317</span>
+        </div>
+        <div class="tras-contacto__dato">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Blvd. 27 de Febrero 2265, Rosario</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario que envía al mail -->
+    <form class="tras-form" id="trasForm" action="https://formsubmit.co/orsisanty@gmail.com" method="POST" novalidate>
+
+      <!-- Configuración de FormSubmit -->
+      <input type="hidden" name="_subject" value="Nueva consulta de traslado — Nuevo Destino Viajes">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <div class="tras-form__row">
+        <div class="tras-form__field">
+          <label for="tNombre">Nombre y apellido *</label>
+          <input type="text" id="tNombre" name="nombre_apellido" placeholder="Juan García" required>
+        </div>
+        <div class="tras-form__field">
+          <label for="tEmpresa">Empresa <span class="tras-form__opt">(opcional)</span></label>
+          <input type="text" id="tEmpresa" name="empresa" placeholder="Nombre de la empresa">
+        </div>
+      </div>
+
+      <div class="tras-form__row">
+        <div class="tras-form__field">
+          <label for="tEmail">Email *</label>
+          <input type="email" id="tEmail" name="email" placeholder="tucorreo@email.com" required>
+        </div>
+        <div class="tras-form__field">
+          <label for="tTelefono">Teléfono / WhatsApp *</label>
+          <input type="tel" id="tTelefono" name="telefono_whatsapp" placeholder="+54 341 000-0000" required>
+        </div>
+      </div>
+
+      <div class="tras-form__field">
+        <label for="tServicio">Tipo de servicio *</label>
+        <div class="tras-form__select-wrap">
+          <select id="tServicio" name="tipo_servicio" required>
+            <option value="" disabled selected>Seleccioná el servicio que necesitás</option>
+            <option value="Traslado corporativo regular">Traslado corporativo regular</option>
+            <option value="Traslado ejecutivo">Traslado ejecutivo</option>
+            <option value="Servicio premium">Servicio premium</option>
+            <option value="Alquiler de micro / van">Alquiler de micro / van</option>
+            <option value="Evento social / corporativo">Evento social / corporativo</option>
+            <option value="Excursión escolar">Excursión escolar</option>
+            <option value="Club / deporte">Club / deporte</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <svg class="tras-form__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+
+      <div class="tras-form__field">
+        <label for="tMensaje">Mensaje <span class="tras-form__opt">(opcional)</span></label>
+        <textarea id="tMensaje" name="mensaje" rows="3" placeholder="Contanos más sobre tu necesidad: fechas, cantidad de pasajeros, destino..."></textarea>
+      </div>
+
+      <button type="submit" class="tras-form__submit" id="trasSubmit">
+        <span id="trasSubmitLabel">Enviar consulta</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+      <!-- Mensaje de éxito (oculto por defecto) -->
+      <div class="tras-form__success" id="trasSuccess" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        ¡Consulta enviada! Nos comunicamos a la brevedad.
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
 <!-- ======================= FOOTER ======================= -->
 <footer class="footer" id="contacto">
   <div class="container">
@@ -283,7 +373,7 @@
         <div class="footer__col">
           <h4 data-i18n="footer_col3_title">Contacto</h4>
           <ul>
-            <li>(0341) 334-1317 / 307-9587 </li>
+            <li>(0341) 334-1317 / 507-9587</li>
             <li data-i18n="topbar_address">Blvd. 27 de Febrero 2265, S2001 Rosario, Santa Fe</li>
           </ul>
         </div>
@@ -304,5 +394,58 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+<script>
+  // Envío del formulario via AJAX (sin redirigir la página)
+  var form    = document.getElementById("trasForm");
+  var submit  = document.getElementById("trasSubmit");
+  var label   = document.getElementById("trasSubmitLabel");
+  var exito   = document.getElementById("trasSuccess");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Evitar el envío normal
+
+    // Validar campos obligatorios
+    var nombre   = document.getElementById("tNombre").value.trim();
+    var email    = document.getElementById("tEmail").value.trim();
+    var telefono = document.getElementById("tTelefono").value.trim();
+    var servicio = document.getElementById("tServicio").value;
+
+    if (!nombre || !email || !telefono || !servicio) {
+      alert("Por favor completá todos los campos obligatorios (*).");
+      return;
+    }
+
+    // Cambiar botón a estado de carga
+    submit.disabled = true;
+    label.textContent = "Enviando...";
+
+    // Armar los datos del form
+    var datos = new FormData(form);
+
+    // Enviar a FormSubmit via fetch (AJAX)
+    fetch("https://formsubmit.co/ajax/orsisanty@gmail.com", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: datos
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success === "true" || data.success === true) {
+        // Ocultar formulario y mostrar mensaje de éxito
+        form.reset();
+        form.style.display = "none";
+        exito.hidden = false;
+      } else {
+        throw new Error("Error al enviar");
+      }
+    })
+    .catch(function() {
+      // En caso de error, restaurar el botón
+      submit.disabled = false;
+      label.textContent = "Enviar consulta";
+      alert("Hubo un error al enviar. Intentá de nuevo o contactanos por WhatsApp.");
+    });
+  });
+</script>
 </body>
 </html>
