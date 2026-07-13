@@ -678,6 +678,7 @@
   var submit  = document.getElementById("trasSubmit");
   var label   = document.getElementById("trasSubmitLabel");
   var exito   = document.getElementById("trasSuccess");
+  exito.style.display = "none"; // Asegurar que arranque oculto, sin depender del atributo hidden
 
   form.addEventListener("submit", function(e) {
     e.preventDefault(); // Evitar el envío normal
@@ -712,7 +713,7 @@
         // Ocultar formulario y mostrar mensaje de éxito
         form.reset();
         form.style.display = "none";
-        exito.hidden = false;
+        exito.style.display = "flex";
       } else {
         throw new Error("Error al enviar");
       }
