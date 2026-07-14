@@ -13,9 +13,7 @@ var VEHICULOS = {
     fotos: [
       "assets/img/flota/corolla/01.jpg",
       "assets/img/flota/corolla/02.jpg",
-      "assets/img/flota/corolla/03.jpg",
-      "assets/img/flota/corolla/04.jpg",
-      "assets/img/flota/corolla/05.jpg"
+      "assets/img/flota/corolla/03.jpg"
     ],
     specs:   ["👥 Hasta 3 pasajeros", "🌿 Motor híbrido", "⭐ Línea SEG"],
     desc:    "Combina el máximo lujo de la línea SEG con tecnología híbrida. Garantiza un viaje silencioso, suave y amigable con el medio ambiente. Ideal para traslados ejecutivos, corporativos o privados donde la distinción y la sustentabilidad son prioridad.",
@@ -35,9 +33,7 @@ var VEHICULOS = {
     fotos: [
       "assets/img/flota/mercedes/01.jpg",
       "assets/img/flota/mercedes/02.jpg",
-      "assets/img/flota/mercedes/03.jpg",
-      "assets/img/flota/mercedes/04.jpg",
-      "assets/img/flota/mercedes/05.jpg",
+      "assets/img/flota/mercedes/03.jpg"
     ],
     specs:   ["👥 Hasta 3 pasajeros", "⭐ Alta gama", "🏆 VIP Premium"],
     desc:    "El estándar definitivo de elegancia y prestigio. Sedán de lujo ideal para pasajeros VIP, directivos o eventos especiales. Ofrece una experiencia de viaje superior con el inconfundible confort de Mercedes-Benz.",
@@ -56,9 +52,7 @@ var VEHICULOS = {
     fotos: [
       "assets/img/flota/hiace/01.jpg",
       "assets/img/flota/hiace/02.jpg",
-      "assets/img/flota/hiace/03.jpg",
-      "assets/img/flota/hiace/04.jpg",
-      "assets/img/flota/hiace/05.jpg"
+      "assets/img/flota/hiace/03.jpg"
     ],
     specs:   ["👥 7 pasajeros", "🎯 Grupos reducidos", "💼 Turismo VIP"],
     desc:    "Diseñada para el transporte VIP de grupos pequeños. Redefine el espacio interior ofreciendo butacas amplias y un andar excepcionalmente suave. Ideal para delegaciones, turismo receptivo o familias que buscan viajar en primera clase.",
@@ -78,9 +72,7 @@ var VEHICULOS = {
     fotos: [
       "assets/img/flota/transit/01.jpg",
       "assets/img/flota/transit/02.jpg",
-      "assets/img/flota/transit/03.jpg",
-      "assets/img/flota/transit/04.jpg",
-      "assets/img/flota/transit/05.jpg"
+      "assets/img/flota/transit/03.jpg"
     ],
     specs:   ["👥 15 pasajeros", "✈️ Transfers", "🛣️ Media distancia"],
     desc:    "La opción más ágil y confiable para excursiones, traslados a aeropuertos y turismo regional. Interior optimizado para el confort de los pasajeros en trayectos cortos y medianos.",
@@ -96,13 +88,6 @@ var VEHICULOS = {
     tipo:    "Minibús 19 pasajeros",
     nombre:  "Mercedes-Benz Sprinter",
     clase:   "flota-card__img--sprinter",
-    fotos: [
-      "assets/img/flota/sprinter/01.jpg",
-      "assets/img/flota/sprinter/02.jpg",
-      "assets/img/flota/sprinter/03.jpg",
-      "assets/img/flota/sprinter/04.jpg",
-      "assets/img/flota/sprinter/05.jpg"
-    ],
     specs:   ["👥 19 pasajeros", "🏢 Corporativo", "🗺️ Media distancia"],
     desc:    "Un paso más en capacidad sin perder la agilidad de un minibús. Excelente para viajes corporativos, eventos y turismo de media distancia. Su chasis reforzado garantiza un viaje estable y placentero para contingentes medianos.",
     features: [
@@ -117,13 +102,6 @@ var VEHICULOS = {
     tipo:    "Minibús 24 pasajeros",
     nombre:  "Saldivia Minibús",
     clase:   "flota-card__img--saldivia",
-    fotos: [
-      "assets/img/flota/saldivia/01.jpg",
-      "assets/img/flota/saldivia/02.jpg",
-      "assets/img/flota/saldivia/03.jpg",
-      "assets/img/flota/saldivia/04.jpg",
-      "assets/img/flota/saldivia/05.jpg"
-    ],
     specs:   ["👥 24 pasajeros", "🧳 Bodega amplia", "🔧 Mercedes-Benz"],
     desc:    "La combinación perfecta entre la mecánica confiable de Mercedes-Benz y el diseño de carrocerías Saldivia. Ideal para viajes de media distancia y excursiones turísticas, ofreciendo mayor amplitud y capacidad de bodega.",
     features: [
@@ -139,13 +117,6 @@ var VEHICULOS = {
     tipo:    "Bus interurbano",
     nombre:  "Carrocería Metalsur",
     clase:   "flota-card__img--metalsur",
-    fotos: [
-      "assets/img/flota/metalsur/01.jpg",
-      "assets/img/flota/metalsur/02.jpg",
-      "assets/img/flota/metalsur/03.jpg",
-      "assets/img/flota/metalsur/04.jpg",
-      "assets/img/flota/metalsur/05.jpg"
-    ],
     specs:   ["👥 41 a 50 pasajeros", "🏫 Escolar/Institucional", "🛡️ Máxima seguridad"],
     desc:    "Diseñado especialmente para escuelas, clubes e instituciones. Ideal para salidas didácticas, excursiones escolares, traslados deportivos o eventos institucionales. Permite mover grandes grupos cuidando el presupuesto sin resignar confort.",
     features: [
@@ -160,13 +131,6 @@ var VEHICULOS = {
     tipo:    "Bus piso elevado",
     nombre:  "Carrocería Comil",
     clase:   "flota-card__img--comil",
-    fotos: [
-      "assets/img/flota/comil/01.jpg",
-      "assets/img/flota/comil/02.jpg",
-      "assets/img/flota/comil/03.jpg",
-      "assets/img/flota/comil/04.jpg",
-      "assets/img/flota/comil/05.jpg"
-    ],
     specs:   ["👥 48 pasajeros", "💺 Semicama", "🛣️ Larga distancia"],
     desc:    "Pensado exclusivamente para disfrutar el trayecto en viajes de media y larga distancia. Ofrece todas las comodidades para que el pasajero se relaje por completo desde el punto de partida hasta el destino final.",
     features: [
@@ -183,13 +147,6 @@ var VEHICULOS = {
     tipo:    "Bus doble piso 60 Mix",
     nombre:  "Marcopolo / Niccolo",
     clase:   "flota-card__img--marcopolo",
-    fotos: [
-      "assets/img/flota/marcopolo/01.jpg",
-      "assets/img/flota/marcopolo/02.jpg",
-      "assets/img/flota/marcopolo/03.jpg",
-      "assets/img/flota/marcopolo/04.jpg",
-      "assets/img/flota/marcopolo/05.jpg"
-    ],
     specs:   ["👥 60 pasajeros", "🛏️ Cama + Semicama", "🏆 Alta gama"],
     desc:    "El gigante de nuestra flota. Su configuración Mix permite ofrecer dos niveles de confort en un mismo vehículo (Cama y Semicama), siendo la solución definitiva para viajes largos de grandes contingentes, viajes de estudio o turismo masivo.",
     features: [
@@ -215,11 +172,10 @@ function iniciarCarrusel(fotos) {
   var track = document.getElementById("carouselTrack");
   var dots  = document.getElementById("carouselDots");
 
-  // Generar slides
-  track.innerHTML = fotos.map(function(src, i) {
-    return '<div class="flota-carousel__slide">' +
-      '<img src="' + src + '" alt="Foto ' + (i+1) + '" loading="' + (i === 0 ? "eager" : "lazy") + '">' +
-      '</div>';
+  // Generar slides usando background-image (maneja mejor fotos portrait y landscape)
+  track.innerHTML = fotos.map(function(src) {
+    return '<div class="flota-carousel__slide" style="background-image:url(\'' + src + '\');background-size:cover;background-position:center;"></div>';
+  }).join("");
   }).join("");
 
   // Generar puntos
