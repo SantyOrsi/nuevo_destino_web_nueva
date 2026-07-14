@@ -200,11 +200,11 @@
 .flota-card__img--mercedes-c { background: url('../../assets/img/flota/mercedes/01.jpg') center/cover no-repeat; }
 .flota-card__img--hiace { background: url('../../assets/img/flota/hiace/01.jpg') center/cover no-repeat; }
 .flota-card__img--transit { background: url('../../assets/img/flota/transit/01.jpg') center/cover no-repeat; }
-.flota-card__img--sprinter   { background: linear-gradient(135deg, #2c1a4a 0%, #6a3aaa 100%); }
-.flota-card__img--saldivia   { background: linear-gradient(135deg, #1a3a4a 0%, #2d7a9a 100%); }
-.flota-card__img--metalsur   { background: linear-gradient(135deg, #4a1a1a 0%, #aa3a3a 100%); }
-.flota-card__img--comil      { background: linear-gradient(135deg, #1a2a4a 0%, #2d4a9a 100%); }
-.flota-card__img--marcopolo  { background: linear-gradient(135deg, #1a1a2c 0%, #2c2c6a 100%); }
+.flota-card__img--sprinter   { background:  url('../../assets/img/flota/sprinter/01.jpg') center/cover no-repeat; }
+.flota-card__img--saldivia   { background:  url('../../assets/img/flota/saldivia/01.jpg') center/cover no-repeat; }
+.flota-card__img--metalsur   { background:  url('../../assets/img/flota/metalsur/01.jpg') center/cover no-repeat; }
+.flota-card__img--comil      { background:  url('../../assets/img/flota/comil/01.jpg') center/cover no-repeat; }
+.flota-card__img--marcopolo  { background:  url('../../assets/img/flota/marcopolo/01.jpg') center/cover no-repeat; }
 
 /* Sin emoji decorativo */
 .flota-card__img::before { display: none; }
