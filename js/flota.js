@@ -58,7 +58,7 @@ var VEHICULOS = {
       "assets/img/flota/hiace/02.jpg",
       "assets/img/flota/hiace/03.jpg",
       "assets/img/flota/hiace/04.jpg",
-      "assets/img/flota/hiace04.jpg"
+      "assets/img/flota/hiace05.jpg"
     ],
     specs:   ["👥 7 pasajeros", "🎯 Grupos reducidos", "💼 Turismo VIP"],
     desc:    "Diseñada para el transporte VIP de grupos pequeños. Redefine el espacio interior ofreciendo butacas amplias y un andar excepcionalmente suave. Ideal para delegaciones, turismo receptivo o familias que buscan viajar en primera clase.",
