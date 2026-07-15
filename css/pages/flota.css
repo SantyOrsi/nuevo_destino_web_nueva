@@ -542,8 +542,190 @@
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .flota-carousel { height: 200px; }
-  .flota-carousel__btn { width: 34px; height: 34px; }
-  .flota-carousel__btn svg { width: 17px; height: 17px; }
+/* ==========================================================
+   MOBILE PREMIUM
+   ========================================================== */
+
+@media (max-width:768px){
+
+  /* Espaciados */
+  .flota-grid-section{
+    padding:40px 0 70px;
+  }
+
+  .flota-categoria{
+    padding-top:40px;
+    margin-bottom:18px;
+  }
+
+  .flota-cat-title{
+    font-size:30px;
+  }
+
+  /* Una sola columna */
+  .flota-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  /* Cards */
+  .flota-card{
+    border-radius:20px;
+    overflow:hidden;
+    border:none;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    transition:.25s;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .flota-card:active{
+    transform:scale(.98);
+  }
+
+  /* Imagen grande */
+  .flota-card__img{
+    height:245px;
+    background-size:cover;
+    background-position:center;
+  }
+
+  /* Ajustes individuales */
+  .flota-card__img--corolla{
+    background-position:center 60%;
+  }
+
+  .flota-card__img--mercedes-c{
+    background-position:center;
+  }
+
+  .flota-card__img--hiace{
+    background-position:center;
+  }
+
+  .flota-card__img--transit{
+    background-position:center;
+  }
+
+  .flota-card__img--sprinter{
+    background-position:center 60%;
+  }
+
+  .flota-card__img--saldivia{
+    background-position:center;
+  }
+
+  .flota-card__img--metalsur{
+    background-position:center 60%;
+  }
+
+  .flota-card__img--comil{
+    background-position:center 60%;
+  }
+
+  .flota-card__img--marcopolo{
+    background-position:center 65%;
+  }
+
+  /* Overlay siempre visible */
+  .flota-card__overlay-hint{
+    opacity:1;
+    background:linear-gradient(
+      to top,
+      rgba(0,0,0,.65),
+      rgba(0,0,0,0)
+    );
+    align-items:flex-end;
+    justify-content:center;
+    padding-bottom:20px;
+    font-size:13px;
+    letter-spacing:.08em;
+  }
+
+  .flota-card__body{
+    padding:22px;
+  }
+
+  .flota-card__tipo{
+    font-size:12px;
+  }
+
+  .flota-card__body h3{
+    font-size:24px;
+    margin-bottom:14px;
+  }
+
+  .flota-card__specs{
+    gap:8px;
+  }
+
+  .flota-card__specs span{
+    font-size:13px;
+    background:#f4f4f4;
+    border-radius:999px;
+    padding:7px 12px;
+  }
+
+  /* Banner */
+  .flota-banner__card{
+    padding:22px;
+    border-radius:18px;
+  }
+
+  /* Modal estilo app */
+  .flota-modal{
+    padding:0;
+    align-items:flex-end;
+  }
+
+  .flota-modal__box{
+    width:100%;
+    max-width:none;
+    max-height:94vh;
+    border-radius:26px 26px 0 0;
+  }
+
+  .flota-carousel{
+    height:250px;
+  }
+
+  .flota-modal__body{
+    padding:24px;
+  }
+
+  .flota-modal__title{
+    font-size:28px;
+  }
+
+  .flota-modal__desc{
+    font-size:15px;
+    line-height:1.75;
+  }
+
+  .flota-modal__features li,
+  .flota-modal__siempre li{
+    font-size:14px;
+  }
+
+  .flota-modal__cta{
+    height:56px;
+    font-size:15px;
+    position:sticky;
+    bottom:0;
+  }
+
+  /* Flechas del carrusel */
+  .flota-carousel__btn{
+    width:46px;
+    height:46px;
+  }
+
+  .flota-carousel__btn svg{
+    width:22px;
+    height:22px;
+  }
+
+  .flota-carousel__dots{
+    bottom:18px;
+  }
+
 }
