@@ -37,7 +37,7 @@ var VEHICULOS = {
       "assets/img/flota/mercedes/02.jpg",
       "assets/img/flota/mercedes/03.jpg",
       "assets/img/flota/mercedes/04.jpg",
-      "assets/img/flota/mercedes05.jpg"
+      "assets/img/flota/mercedes/05.jpg"
     ],
     specs:   ["👥 Hasta 3 pasajeros", "⭐ Alta gama", "🏆 VIP Premium"],
     desc:    "El estándar definitivo de elegancia y prestigio. Sedán de lujo ideal para pasajeros VIP, directivos o eventos especiales. Ofrece una experiencia de viaje superior con el inconfundible confort de Mercedes-Benz.",
@@ -58,7 +58,7 @@ var VEHICULOS = {
       "assets/img/flota/hiace/02.jpg",
       "assets/img/flota/hiace/03.jpg",
       "assets/img/flota/hiace/04.jpg",
-      "assets/img/flota/hiace05.jpg"
+      "assets/img/flota/hiace/05.jpg"
     ],
     specs:   ["👥 7 pasajeros", "🎯 Grupos reducidos", "💼 Turismo VIP"],
     desc:    "Diseñada para el transporte VIP de grupos pequeños. Redefine el espacio interior ofreciendo butacas amplias y un andar excepcionalmente suave. Ideal para delegaciones, turismo receptivo o familias que buscan viajar en primera clase.",
@@ -184,7 +184,7 @@ var VEHICULOS = {
     nombre:  "Marcopolo / Niccolo",
     clase:   "flota-card__img--marcopolo",
       fotos: [
-      "assets/img/flota/marcopolo/01jpg",
+      "assets/img/flota/marcopolo/01.jpg",
       "assets/img/flota/marcopolo/02.jpg",
       "assets/img/flota/marcopolo/03.jpg",
       "assets/img/flota/marcopolo/04.jpg",
