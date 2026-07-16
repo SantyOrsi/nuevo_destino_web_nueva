@@ -60,7 +60,7 @@ const i18n = {
     branch1_tag2: "VIP Premium",
     branch1_tag3: "Grupos",
     branch1_tag4: "Eventos",
-    branch1_cta: "Ver todos los traslados →",
+    branch1_cta: "Informacion servicio de traslado →",
 
     branch2_eyebrow_big: "Agencia",
     branch2_eyebrow_small: "Área 02 — Turismo",
@@ -69,7 +69,7 @@ const i18n = {
     branch2_tag1: "Nacional",
     branch2_tag2: "Internacional",
     branch2_tag3: "Grupal",
-    branch2_cta: "Ver todos los paquetes →",
+    branch2_cta: "Ver paquetes turisticos→",
 
     footer_desc: "Una empresa familiar de Rosario dedicada a traslados y turismo, con infraestructura propia y un equipo comprometido con cada viaje.",
     footer_col1_title: "Empresa",
